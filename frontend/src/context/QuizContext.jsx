@@ -3,10 +3,13 @@ import { createContext, useState } from "react";
 export const QuizContext = createContext();
 
 const QuizProvider = ({ children }) => {
-    const [questions, setQuestions] = useState([]);
+    const [quizData, setQuizData] = useState({
+        category: null,
+        limit: 5
+    });
 
     return (
-        <QuizContext.Provider value={{ questions, setQuestions }}>
+        <QuizContext.Provider value={{ quizData, setQuizData }}>
             {children}
         </QuizContext.Provider>
     );

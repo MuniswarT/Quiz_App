@@ -13,7 +13,7 @@ const Register = () => {
         try {
             const response = await register({ name, email, password });
             localStorage.setItem("token", response.data.token);
-            navigate("/dashboard");
+            navigate("/");
         } catch (error) {
             console.error("Registration failed:", error);
         }

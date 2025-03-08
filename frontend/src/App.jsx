@@ -1,30 +1,28 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
+import Dashboard from "./pages/DashBoard"; // ✅ This is your leaderboard page
+import Quiz from "./pages/Quiz";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import DashBoard from "./pages/DashBoard";
-import Quiz from "./pages/Quiz";
+import SelectQuiz from "./pages/SelectQuiz";
 import Results from "./pages/Results";
-import Navbar from "./components/Navbar";
-import ProtectedRoute from "./components/ProtectedRoute";
-import QuizProvider from "./context/QuizContext";
 
-function App() {
+const App = () => {
     return (
-        <QuizProvider>
-            <Router>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/dashboard" element={<ProtectedRoute><DashBoard /></ProtectedRoute>} />
-                    <Route path="/quiz" element={<ProtectedRoute><Quiz /></ProtectedRoute>} />
-                    <Route path="/results" element={<ProtectedRoute><Results /></ProtectedRoute>} />
-                </Routes>
-            </Router>
-        </QuizProvider>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/select-quiz" element={<SelectQuiz />} />
+            <Route path="/results" element={<Results />} />
+            <Route path="/leaderboard" element={<Dashboard />} /> {/* ✅ Add this route */}
+
+            {/* Protect these pages */}
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+            <Route path="/quiz" element={<ProtectedRoute><Quiz /></ProtectedRoute>} />
+        </Routes>
     );
-}
+};
 
 export default App;

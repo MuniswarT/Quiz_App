@@ -6,9 +6,10 @@ const Results = () => {
 
     return (
         <div>
-            <h2>Quiz Results</h2>
+            <h2>Thank You for Playing! 🎉</h2>
             <p>Your Score: {state?.score} / {state?.total}</p>
-            <button onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
+            <button onClick={() => navigate("/")}>Home</button>
+            <button onClick={() => navigate("/leaderboard")}>Leaderboard</button> {/* ✅ This works now */}
         </div>
     );
 };

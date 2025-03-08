@@ -19,12 +19,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            <h2>Dashboard</h2>
-            <Link to="/quiz">
-                <button>Start Quiz</button>
-            </Link>
-
-            <h3>🏆 Leaderboard</h3>
+            <h2>🏆 Leaderboard</h2>
             <table border="1">
                 <thead>
                     <tr>
@@ -49,6 +44,7 @@ const Dashboard = () => {
                     )}
                 </tbody>
             </table>
+            <Link to="/">Go Home</Link>
         </div>
     );
 };

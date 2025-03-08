@@ -1,8 +1,9 @@
 const express = require("express");
-const { getQuizzes } = require('../Controllers/quizController');
+const { fetchQuizzes } = require("../controllers/quizController");
+
 const router = express.Router();
 
-router.get("/", getQuizzes);  
+// Fetch quizzes dynamically from OpenTDB API
+router.get("/fetch", fetchQuizzes);
 
 module.exports = router;
-
