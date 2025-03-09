@@ -8,7 +8,7 @@
 
     const app = express();
 
-    // Middleware
+    // it is middleware
     app.use(cors());
     app.use(express.json());// it iss used to put or post in json format
 
